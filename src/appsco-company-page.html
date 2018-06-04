@@ -83,6 +83,12 @@
                 border: none;
                 background-color: var(--divider-color);
             }
+            :host div.branded-login-text {
+                float:left;
+            }
+            :host appsco-copy {
+                float:right;
+            }
         </style>
 
         <iron-media-query query="(max-width: 1200px)" query-matches="{{ mediumScreen }}"></iron-media-query>
@@ -103,9 +109,15 @@
                                    class="info-icon"></iron-icon>
                         [[ company.contact_email ]]
                     </div>
+
                     <div class="company-branded-login">
-                        <div>Company login URL: </div>
-                        <span class="branded-login-url">[[ company.meta.branded_login_url]]</span>
+                        <div class="branded-login-label">Company login URL</div>
+                        <div class="branded-login-content">
+                            <div class="branded-login-text">
+                                [[ company.meta.branded_login_url]]
+                            </div>
+                            <appsco-copy value="[[ company.meta.branded_login_url]]"></appsco-copy>
+                        </div>
                     </div>
                 </div>
             </div>
