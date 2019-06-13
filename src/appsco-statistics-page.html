@@ -953,15 +953,15 @@
                                 date = new Date(record.created_at.date),
                                 date = date.toLocaleDateString('en', { month: 'short', day: 'numeric' });
 
-                        if (chartApplications.indexOf(record.application.title) == -1) {
-                            chartApplications.push(record.application.title);
+                        if (chartApplications.indexOf(record.data.application.title) == -1) {
+                            chartApplications.push(record.data.application.title);
                         }
 
                         if (!innerData[date]) {
                             innerData[date] = [];
                         }
 
-                        innerData[date][record.application.title] = !innerData[date][record.application.title] ? 1 : innerData[date][record.application.title] + 1;
+                        innerData[date][record.data.application.title] = !innerData[date][record.data.application.title] ? 1 : innerData[date][record.data.application.title] + 1;
                     }
 
                     chart.data = [chartApplications];
